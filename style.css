@@ -1,0 +1,186 @@
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #446072, #1b3c51);
+  margin: 0;
+  overflow: hidden;
+  color: #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.form-container {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+}
+
+.form-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  transition: transform 0.6s ease-in-out;
+}
+
+#login-box {
+  transform: rotateY(0);
+}
+
+#signup-box {
+  transform: rotateY(180deg);
+  overflow-y: auto; 
+}
+
+.form-container.flipped #login-box {
+  transform: rotateY(-180deg);
+}
+
+.form-container.flipped #signup-box {
+  transform: rotateY(0);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #446072;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  transition: border 0.3s ease, background-color 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: #446072;
+  background-color: #fff;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(to right, #446072, #1b3c51);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: linear-gradient(to right, #1b3c51, #446072);
+  transform: scale(1.05);
+}
+
+#signup-box .user-type {
+  margin-bottom: 15px;
+}
+
+#signup-box .user-grid {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+#signup-box .user-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+}
+
+#signup-box .user-icon img {
+  width: 40px;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+#signup-box .user-icon:hover {
+  background-color: #e7f1f7;
+  border-color: #446072;
+  transform: translateY(-5px);
+}
+
+#signup-box .user-icon.selected {
+  background-color: #d4e8ec;
+  border-color: #1b3c51;
+}
+
+.toggle-form {
+  color: #1b3c51;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 10px;
+  transition: color 0.3s ease;
+}
+
+.toggle-form:hover {
+  color: #446072;
+}
+
+::-webkit-scrollbar {
+  width: 10px; 
+  height: 10px; 
+}
+
+::-webkit-scrollbar-track {
+  background: #f9f9f9; 
+  border-radius: 8px; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #446072, #1b3c51); 
+  border-radius: 8px; 
+  border: 2px solid #f9f9f9; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #1b3c51, #446072);
+  border-color: #e7f1f7; 
+}
+
+#signup-box {
+  scrollbar-width: thin; 
+  scrollbar-color: #446072 #f9f9f9; 
+}
